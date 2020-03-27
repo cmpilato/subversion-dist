@@ -15,7 +15,7 @@ SUBVERSION_BRANCH="branches/1.14.x"
 SUBVERSION_BUILD_NAME="subversion-1.14.0-rc2"
 
 # Set this to "2" or "3".
-SUBVERSION_PYTHON_VERSION=2
+SUBVERSION_PYTHON_VERSION="2"
 
 # ----------------------------------------------------------------------------
 
@@ -26,6 +26,7 @@ echo "*** Running the Subversion release build process ***"
 docker run -v `pwd`/target:/app/target \
        --env SUBVERSION_BRANCH=${SUBVERSION_BRANCH} \
        --env SUBVERSION_BUILD_NAME=${SUBVERSION_BUILD_NAME} \
+       --env SUBVERSION_PYTHON_VERSION=${SUBVERSION_PYTHON_VERSION} \
        ${DOCKER_IMAGE_NAME}:latest \
        bash -c "./make-svn-release.sh 2>&1 | tee ./target/build.log"
 

@@ -37,7 +37,11 @@ cd tools/dist
              build-env ${SUBVERSION_BUILD_NAME}
 
 # Building ${SUBVERSION_BUILD_NAME} ${SVN_REVISION}
-export SWIG_PY_OPTS="-python -py3 -nofastunpack -modern"
+if [ ${SUBVERSION_PYTHON_VERSION} = "2" ]; then
+    export SWIG_PY_OPTS="-python -classic"
+else
+    export SWIG_PY_OPTS="-python -py3 -nofastunpack -modern"
+fi
 ./release.py --verbose --branch ${SUBVERSION_BRANCH} \
              roll ${SUBVERSION_BUILD_NAME} ${SVN_REVISION}
 

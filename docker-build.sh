@@ -9,7 +9,7 @@ DOCKER_IMAGE_NAME="cmpilato/subversion-dist"
 # The branch string from the Apache Subversion repository that you're
 # building.  This value is appended to the repository base URL, and
 # should be "trunk", "branches/1.12.x", "tags/1.13.1", ...
-SUBVERSION_BRANCH="branches/1.14.x"
+SUBVERSION_BRANCH="tags/1.14.0-rc2"
 
 # The "name" of the release.
 SUBVERSION_BUILD_NAME="subversion-1.14.0-rc2"
